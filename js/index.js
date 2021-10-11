@@ -37,9 +37,9 @@ console.log(hacker1.toUpperCase().split('').join(' '));
 let new_str = "";
 
 for (let i = 0; i < hacker1.length; i++) {
-  new_str += hacker1[i] + " ";
-  console.log(new_str.toUpperCase());
+    new_str += hacker1[i].toUpperCase() + " ";
 }
+console.log(new_str);
 
 /*3.2 Print all the characters of the navigator's name, in reverse order. i.e. "nhoJ" */
 
@@ -78,16 +78,16 @@ Generate 3 paragraphs. Store the text in a variable type of string.
 Make your program count the number of words in the string.
 Make your program count the number of times the Latin word et appears.*/
 
-let baconIpsum = "Bacon ipsum dolor amet chuck jowl tail picanha sirloin boudin meatloaf ground round. Shank short loin hamburger pork chop, shankle pork loin capicola ribeye meatloaf meatball porchetta.Boudin pork belly turducken cupim shank ribeye capicola ausage venison picanha tri-tip chicken rump swine biltong. Beef ribs pork pork belly biltong jowl doner alcatra ham porchetta pig corned beef pork chop pork loin. Beef ribs rump drumstick meatloaf pig boudin ball tip andouille. et et Porchetta tri-tip frankfurter jerky. Beef ribs short loin tail, frankfurter strip steak biltong rump buffalo. Pork loin meatloaf tri-tip, corned beef frankfurter picanha jowl ground round bresaola short ribs. Tongue beef tri-tip pork loin tenderloin capicola. T-bone leberkas swine pork chop chuck."
+let baconIpsum = "Bacon ipsum dolor amet chuck jowl tail picanha sirloin boudin meatloaf ground round. Shank short loin hamburger pork chop, et shankle pork loin capicola ribeye meatloaf meatball porchetta.Boudin pork belly turducken cupim shank ribeye capicola ausage venison picanha tri-tip chicken rump swine biltong. Beef ribs pork pork belly biltong jowl doner alcatra ham porchetta pig corned beef pork chop pork loin. Beef ribs rump drumstick meatloaf pig boudin ball tip andouille. et et Porchetta tri-tip frankfurter jerky. Beef ribs short loin tail, frankfurter strip steak biltong rump buffalo. Pork loin meatloaf tri-tip, corned beef frankfurter picanha jowl ground round bresaola short ribs. Tongue beef tri-tip pork loin tenderloin capicola. T-bone leberkas et swine pork chop chuck."
 
 let prgSplit = baconIpsum.split(' ');
 console.log(prgSplit.length);
 
-let count = 0;
+let etCount = 0;
 for ( let i = 0; i < prgSplit.length; i++) {
-  if ( prgSplit[i] === 'et') count += 1;
+  if ( prgSplit[i] === 'et') etCount += 1;
 }
-console.log(count);
+console.log(etCount);
 
 /* Write a code that will check if the value we assigned to this variable is a Palindrome. Here are some examples of palindromes:
 
@@ -100,13 +100,14 @@ console.log(count);
 "put it up"
 "Was it a car or a cat I saw?" and "No 'x' in Nixon". */
 
-let phraseToCheck = "step on no pets";
+let phraseToCheck = "No 'x' in Nixon";
+phraseToCheck = phraseToCheck.replace(/[^a-zA-Z0-9]/g, "");
 let reverse = "";
 for (let i = phraseToCheck.length - 1; i >= 0; i--) {
   reverse += phraseToCheck[i];
-  reverse = reverse.toLowerCase()
+  reverse = reverse.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
 }
-if (reverse == phraseToCheck.toLowerCase()) {
+if (reverse === phraseToCheck.toLowerCase()) {
   console.log("passed string is palindrome ");
 } else {
   console.log("passed string is not palindrome");
