@@ -100,13 +100,13 @@ console.log(count);
 "put it up"
 "Was it a car or a cat I saw?" and "No 'x' in Nixon". */
 
-let str = "step on no pets";
+let phraseToCheck = "step on no pets";
 let reverse = "";
-for (let i = str.length - 1; i >= 0; i--) {
-  reverse += str[i];
+for (let i = phraseToCheck.length - 1; i >= 0; i--) {
+  reverse += phraseToCheck[i];
   reverse = reverse.toLowerCase()
 }
-if (reverse == str.toLowerCase()) {
+if (reverse == phraseToCheck.toLowerCase()) {
   console.log("passed string is palindrome ");
 } else {
   console.log("passed string is not palindrome");
