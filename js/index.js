@@ -62,6 +62,27 @@ console.log(hacker2.split('').reverse().join(''));
 - Yo, the navigator goes first definitely.
 - What?! You both have the same name? */
 
+let firstLetterDriver = '';
+for(i=0;i<hacker1.length;i++) {
+    firstLetterDriver = hacker1.substr(0,1)
+}    
+console.log(firstLetterDriver);
+
+let firstLetterNavigator = '';
+for(i=0;i<hacker2.length;i++) {
+    firstLetterNavigator = hacker2.substr(0,1)
+}    
+console.log(firstLetterNavigator);
+
+let lexicOrder = firstLetterDriver.localeCompare(firstLetterNavigator);
+if ( lexicOrder === -1 ) {
+  console.log(`The driver's name goes first.`)
+} else if ( lexicOrder === 1 ) {
+  console.log(`Yo, the navigator goes first definitely.`)
+} else { console.log(`What?! You both got the same name?`)}
+
+/* or */
+
 let lexic = hacker1.localeCompare(hacker2);
 if ( lexic === -1 ) {
   console.log(`The driver's name goes first.`)
